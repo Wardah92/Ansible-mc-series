@@ -59,6 +59,7 @@ a) From ansible control node to remote node \
   **$ ansible db -m service -a "name=apache2 state=started" --become**
 
   **$ ansible db -m apt -a "name=nginx state=present" -b**
+You should use yum instead of apt for debian (redhat)
 
   A key principle of Ansible that makes it different from scripting is the concept of idempotency. The official Ansible documentation describes idempotency as follows: “An operation is idempotent if the result of performing it once is exactly the same as the result of performing it repeatedly without any intervening actions.” This means that if you run a playbook with the same set of inputs, you should not expect it to make any changes on the system
 
