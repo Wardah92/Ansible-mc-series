@@ -60,6 +60,8 @@ a) From ansible control node to remote node \
 
   **$ ansible db -m apt -a "name=nginx state=present" -b**
 
+  A key principle of Ansible that makes it different from scripting is the concept of idempotency. The official Ansible documentation describes idempotency as follows: “An operation is idempotent if the result of performing it once is exactly the same as the result of performing it repeatedly without any intervening actions.” This means that if you run a playbook with the same set of inputs, you should not expect it to make any changes on the system
+
 ## **7. Service Module**
 - You can use the service module to manage services running on the remote nodes managed by Ansible. This will require extended system privileges, so make sure your remote user has sudo permissions and you include the --become option to use Ansible’s privilege escalation system. Using -K will prompt you to provide the sudo password for the connecting user.
 
